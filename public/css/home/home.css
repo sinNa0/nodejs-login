@@ -30,6 +30,7 @@
 }
 .content{
     height: 100%;
+    position: relative;
 }
 .home_row {
     display: flex;

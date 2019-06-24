@@ -32,21 +32,15 @@ const goodsFind = (goodsInfo,cb) => {
 
 //商品删除 
 const goodsRemove = (goodsInfo,cb) => {
-    console.log(goodsInfo);
-    
-    Goods.remove({goodsName:goodsInfo}).then((result) => {
+    Goods.remove(goodsInfo).then((result) => {
         cb(result);
     });
     
 }
 
 //商品编辑
-const goodsUpdate = (goodsInfo,cb) =>{
-    Goods.update({tel:goodsInfo.tel},{
-            goodsName:goodsInfo.goodsName,
-            goodsPic:goodsInfo.goodsPic,
-            goodsDec:goodsInfo.goodsDec
-    }).then(result => {
+const goodsUpdate = (id,goodsInfo,cb) =>{
+    Goods.update(id,{$set:goodsInfo}).then(result => {
         cb(result);
     });
     

@@ -73,12 +73,10 @@ const List = (req,res,next) =>{
 }
 
 const Remove = (req,res,next) => {
-    let {goodsName} = req.query;
-    console.log(goodsName);
+    let {id} = req.query;
+    console.log(id,123);
     
-    goodsModel.goodsRemove(goodsName,(result) => {
-        // console.log(result.deletedCount);
-        
+    goodsModel.goodsRemove({_id:id},(result) => {
         if(result.deletedCount == 1){
             res.json({
                 code:200,
@@ -103,9 +101,38 @@ const Remove = (req,res,next) => {
  
 }
 
+//商品编辑
+const modify = (req,res,next)=>{
+    let {goodsName,goodsPrice,goodsDes,tel,id} = req.body;
+    let picUrl = "http://localhost:3000/img/" + path.parse(req.files.goodsPic[0].path).base;
+    var list = {goodsName,goodsPrice,goodsDes,tel,goodsPic:picUrl}
+    goodsModel.goodsUpdate({_id:id},list,result => {
+        if(result.ok){
+            res.json({
+                code:200,
+                errMsg:'',
+                data:{
+                    status:1,
+                    info:'编辑成功'
+                }
+            })
+        }
+        else{
+            res.json({
+                code:200,
+                errMsg:'',
+                data:{
+                    status:0,
+                    info:'编辑失败'
+                }
+            })
+        }
+    })
+}
 
 module.exports = {
     add,
     List,
-    Remove
+    Remove,
+    modify
 }

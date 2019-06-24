@@ -27,11 +27,11 @@ var  multer = require('multer')
     //添加商品
     router.post('/add', cpUpload , goodsController.add);
     //商品列表
-    router.get('/list', cpUpload , goodsController.List);
+    router.get('/list', goodsController.List);
     //移除商品
-    router.get('/remove', cpUpload , goodsController.Remove);
+    router.get('/remove', goodsController.Remove);
     //商品编辑
-    // router.post('/compile', cpUpload , goodsController.Compile);
+    router.post('/modify', cpUpload , goodsController.modify);
 
 
     module.exports = router;

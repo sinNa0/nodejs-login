@@ -46,7 +46,7 @@ AddGoods.prototype = {
     handleSubmitCb(e) { //数据post
 
         e.preventDefault();
-
+        
         var goodsName = this.content.find('#goodsName').val();
         var goodsDes = this.content.find('#goodsDes').val();
         var goodsPrice = this.content.find('#goodsPrice').val();
