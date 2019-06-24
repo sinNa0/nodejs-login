@@ -1,0 +1,76 @@
+.navbar-inverse {
+    border-radius: 0;
+    margin-bottom:0; 
+    font-size:14px;
+    color:#fff;
+    
+}
+.wrap{
+    width: 100%;
+    height: 600px;;
+}
+.wrap .list-group {
+    display:block;
+    height: 100%;    
+    border-radius: 0;
+    background: #eee;
+    margin: 0;
+    padding:0;
+}
+.list-group  .list-group-item{
+    border-radius: 0 ; 
+    text-align:center;
+    cursor:pointer;
+    background: #eee;
+    border-right:0;
+}
+.list-group .actives{
+    background: rgb(0, 140, 255);
+    color:#fff;
+}
+.content{
+    height: 100%;
+}
+.home_row {
+    display: flex;
+    justify-content: space-between;
+}
+.home_box{
+    height:150px;
+    text-align: center;
+    line-height: 150px;
+    color:#fff;
+    font-size:20px;
+}
+.content_1{
+    background: orchid;
+}
+
+.content_2{
+    background:#c33;
+}
+
+.content_3{
+    background:orange;
+}
+.main_container{
+    padding:10px;
+}
+
+.echarts_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:40px;
+}
+.user_row,.goods_row{
+    width: 100%;
+    height: 100%;
+    /* padding: 20px; */
+    display: flex;
+    justify-content: center;
+
+}
+.user_row>form,.goods_row>form{
+    width: 80%;
+}
